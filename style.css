@@ -1,0 +1,81 @@
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css?family=Finger+Paint);
+
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+span {
+    margin-top: 60px;
+    display: inline-block;
+    text-shadow: 0 0 0 rgb(0, 0, 0);
+    animation: smoky 5s 3s both;
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    
+    
+
+    
+  }
+  span:nth-child(even){
+    animation-name: smoky-mirror;
+  }
+  @keyframes smoky {
+    60% {
+      text-shadow: 0 0 40px rgb(0, 0, 0);
+    }
+    to {
+      transform:
+        translate3d(15rem,-8rem,0)
+        rotate(-40deg)
+        skewX(70deg)
+        scale(1.5);
+      text-shadow: 0 0 20px rgb(8, 8, 8);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes smoky-mirror {
+    60% {
+      text-shadow: 0 0 40px rgb(16, 16, 16); }
+    to {
+      transform:
+        translate3d(18rem,-8rem,0)
+        rotate(-40deg) 
+        skewX(-70deg)
+        scale(2);
+       text-shadow: 0 0 20px rgb(0, 0, 0);
+      opacity: 0;
+    }
+  }
+  
+  @for $item from 1 through 21 {
+    span:nth-of-type(#{$item}){ 
+      animation-delay: #{(3 + ($item/10))}s; 
+    }
+  } 
+
+img{
+    height: 20px;
+    width: 20px;
+}
+.container{
+    text-align: center;
+    text-align: left;
+    box-shadow: 7px 7px 15px #231003;
+    max-width: 1500px;
+    
+    margin: 0 auto;
+}
+.equipos{
+    margin-left: 50px;
+}
+tr{
+    border: solid black 5px;
+}
+
+.efecto{
+    text-align: center;
+    margin-top: 50px;
+}
